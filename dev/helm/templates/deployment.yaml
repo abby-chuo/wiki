@@ -11,6 +11,8 @@ spec:
       {{- include "wiki.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      annotations:
+        {{- toYaml .Values.podAnnotations | nindent 8 }}
       labels:
         {{- include "wiki.selectorLabels" . | nindent 8 }}
     spec:
